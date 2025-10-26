@@ -28,20 +28,17 @@ def data_processing(data:pd.DataFrame):
     xtrain_tf=transformer.fit_transform(xtrain)
     xtest_tf=transformer.transform(xtest)
 
-    output_path1='/Users/rocky/Desktop/MLops/DVC/Employee Salary Prediction/data/raw/test'
-    os.makedirs(output_path1,exist_ok=True)
-    np.savetxt(os.path.join(output_path1,'xtest.txt'),xtest_tf,delimiter=',')
-    ytest.to_csv(os.path.join(output_path1,'ytest.csv'))
-
-    output_path='/Users/rocky/Desktop/MLops/DVC/Employee Salary Prediction/data/raw/train'
+    output_path='/Users/rocky/Desktop/MLops/Employee Salary Prediction/salary_prediction/data/raw'
     os.makedirs(output_path,exist_ok=True)
+    np.savetxt(os.path.join(output_path,'xtest.txt'),xtest_tf,delimiter=',')
+    ytest.to_csv(os.path.join(output_path,'ytest.csv'))
 
     np.savetxt(os.path.join(output_path,'xtrain.txt'),xtrain_tf,delimiter=',')
     ytrain.to_csv(os.path.join(output_path,'ytrain.csv'))
 
 
 if __name__=='__main__':
-    path='/Users/rocky/Desktop/MLops/DVC/Employee Salary Prediction/data/processed/cleaned_data.csv'
+    path='/Users/rocky/Desktop/MLops/Employee Salary Prediction/salary_prediction/data/processed/cleaned_data.csv'
     data=load_data(path)
     data_processing(data=data)
 

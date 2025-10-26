@@ -5,3 +5,10 @@ stages:
     - src/data_ingestion.py
     outs:
     - data/processed
+  data_preprocessing:
+    cmd: python3 src/data_processing.py
+    deps:
+    - data/processed
+    - src/data_processing.py
+    outs:
+    - data/raw
