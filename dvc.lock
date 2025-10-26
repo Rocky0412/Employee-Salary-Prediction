@@ -31,3 +31,21 @@ stages:
       md5: 2a6553e07689dc1d97e2f3bd5dad1b2d.dir
       size: 2864914
       nfiles: 4
+  Model added:
+    cmd: python3 src/model.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 2a6553e07689dc1d97e2f3bd5dad1b2d.dir
+      size: 2864914
+      nfiles: 4
+    - path: src/model.py
+      hash: md5
+      md5: e73fb1e48925c6611746908456fc9a66
+      size: 802
+    outs:
+    - path: models
+      hash: md5
+      md5: 999ce2822d40dcbd729418c74d6748ff.dir
+      size: 701
+      nfiles: 1

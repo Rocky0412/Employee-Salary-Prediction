@@ -12,3 +12,10 @@ stages:
     - src/data_processing.py
     outs:
     - data/raw
+  Model added:
+    cmd: python3 src/model.py
+    deps:
+    - data/raw
+    - src/model.py
+    outs:
+    - models
